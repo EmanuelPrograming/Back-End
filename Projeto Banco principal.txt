@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+/*
+Gerando executáveis java com JAR(Java Archive)
+
+Java Archive - Arquivo compactado Java
+ */
+public class Main {
+
+    static Conta conta = new Conta("Emanuel",1000);
+    static Cliente c1 = new Cliente("Emanuel Danillo Do Nascimento Araújo", "Rua Florípedes Coutinho", 215, 58430600, "Emanuel123", 123);
+
+
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Bem-vindo ao nosso banco! ");
+
+    System.out.println("--------------------------------------LOGIN--------------------------------------------");
+        System.out.println("USUÁRIO: ");
+        String UsuarioD = input.nextLine();
+    System.out.println("SENHA: ");
+    int SenhaD = input.nextInt();
+
+    if (UsuarioD.equals(c1.GetUsuario()) && SenhaD == c1.GetSenha()) {
+
+        System.out.println("TECLE 1 PARA: DEPÓSITO");
+        System.out.println("TECLE 2 PARA: SAQUE");
+        System.out.println("TECLE 3 PARA: CONSULTA DE SALDO");
+        System.out.println("TECLE 4: SOBRE O USUÁRIO");
+        int op = input.nextInt();
+
+        if (op == 1) {
+            System.out.println("================================= DEPÓSITO ================================");
+            System.out.println("Digite o valor para depósito" + "R$");
+            int valorDeposito = input.nextInt();
+            System.out.println(valorDeposito + "R$" + " FOI DEPOSITADO");
+            conta.Saldo = valorDeposito;
+        } else if (op == 2) {
+            System.out.println("=================================== SAQUE ====================================");
+            System.out.println("Digite o valor para saque");
+            int valorSaque = input.nextInt();
+           //Se o valor for menor que o saque
+            if (conta.Saldo < valorSaque) {
+                System.out.println("Você não possui este saldo");
+            } else {
+                System.out.println(valorSaque + "R$" + " FOI SACADO");
+            }
+        } else if (op == 3) {
+            System.out.println("============================ CONSULTA DE SALDO ====================================");
+            System.out.println("Seu saldo é de: " + conta.Saldo + "R$");
+
+        } else if (op == 4) {
+           System.out.println("Nome Completo: " +c1.GetNome());
+
+           System.out.println("Rua: " + c1.GetRua());
+
+           System.out.println("Número: "+c1.GetNumero());
+
+           System.out.println("CEP: " + c1.GetCEP());
+
+
+        }
+    }else{System.out.println("Seu usuario ou senha está incorreto");}
+
+    }
+
+}

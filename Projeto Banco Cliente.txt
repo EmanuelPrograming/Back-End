@@ -1,0 +1,69 @@
+public class Cliente {
+    private String Nome;
+    private String Rua;
+    private int Numero;
+    private int CEP;
+    private String Usuario;
+    private int Senha;
+
+    public Cliente(String Nome, String Rua, int Numero, int CEP, String Usuario, int Senha){
+        this.Nome = Nome;
+        this.Rua = Rua;
+        this.Numero = Numero;
+        this.CEP = CEP;
+        this.Usuario = Usuario;
+        this.Senha = Senha;
+    }
+    //Nome
+    public void setNome(String Nome) {
+        this.Nome = Nome;
+    }
+
+    public String GetNome(){
+      return this.Nome = Nome;
+    };
+    //Rua
+    public void setRua(String Rua) {
+        this.Rua = Rua;
+    }
+
+    public String GetRua(){
+        return this.Rua = Rua;
+    };
+    //Numero
+    public void setNumero(int Numero) {
+        this.Numero = Numero;
+    }
+
+    public int GetNumero(){
+        return this.Numero = Numero;
+    };
+    //CEP
+    public void setCEP(int CEO) {
+        this.CEP = CEP;
+    }
+
+    public int GetCEP(){
+        return this.CEP = CEP;
+    };
+    //Usuario
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
+    }
+
+    public String GetUsuario(){
+        return this.Usuario = Usuario;
+    };
+    //Senha
+    public void setSenha(int Senha) {
+        this.Senha = Senha;
+    }
+
+    public int GetSenha(){
+        return this.Senha = Senha;
+    };
+
+    /*
+    OBS.: deixar a class main mais enchuta possível, dividindo todo em classes
+     */
+}
